@@ -15,8 +15,7 @@ public class Reader implements Runnable{
     @Override
     public void run() {
 
-        int count = 0;
-        while (count == 0){
+        while (true){
             if (list != null && list.isEmpty()) {
                 Date date = new Date();
                 System.out.println("The list is empty " + date);
