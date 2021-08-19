@@ -23,8 +23,20 @@ public class Test {
         tread3.start();
 
         thread.join();
+        thread1.join();
+        thread2.join();
+        tread3.join();
         long stop = System.currentTimeMillis();
-        System.out.println("Time tread: " + (stop-start));
+        System.out.println("Time with 4 tread: " + (stop-start));
 
+        long start1 = System.currentTimeMillis();
+        WriterArray write5 = new WriterArray(0,20_000_000,array);
+
+        Thread thread5 = new Thread(write5);
+        thread5.start();
+        thread5.join();
+
+        long stop1 = System.currentTimeMillis();
+        System.out.println("Time with 1 tread: " + (stop1-start1));
     }
 }
